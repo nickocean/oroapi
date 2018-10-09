@@ -22,7 +22,7 @@ error_reporting(E_ALL);
 
 $userName = 'dev';
 $userApiKey = '3dc80aa0c30f554de82af4ab3924d37316a998cc';
-$url="http://oro.demo";
+$url="http://188.40.225.138";
 
 
 ////////////
