@@ -44,7 +44,6 @@ $Lead = new LeadsEntities('leads', $attributes, $relationships);
 $crm = new OroRequest($url, $userName ,$userApiKey);
 $resp=$crm->post('/index.php/api/leads/', $Lead);
 debug($resp);
-debug($Lead);
 
 // GET method basic usage
 /*$crm = new OroRequest($url, $userName, $userApiKey);

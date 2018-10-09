@@ -28,6 +28,7 @@ class Request {
 
         $wsseHeader[] = "Content-Type: application/vnd.api+json";
         $wsseHeader[] = $this->getHeader();
+	    print_r($this->_url . $path);
         $options = array(
             CURLOPT_URL => $this->_url . $path,
             CURLOPT_HTTPHEADER => $wsseHeader,
