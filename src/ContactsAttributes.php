@@ -5,6 +5,7 @@ namespace Src;
 
 class ContactsAttributes extends Attributes {
 
+	public $primaryPhone;
 	public $gender;
 	public $birthday;
 	public $description;
@@ -14,10 +15,11 @@ class ContactsAttributes extends Attributes {
 	public $googlePlus;
 
 	public function __construct(
-		$name, $firstName, $lastName, $emails, $phones
+		$firstName, $lastName, $emails, $phones
 	) {
-		parent::__construct( $name, $firstName, $lastName, $emails, $phones );
+		parent::__construct($firstName, $lastName, $emails, $phones );
 
+		$this->primaryPhone = $phones->phone;
 		/*$this->gender = $gender;
 		$this->birthday = $birthday;
 		$this->description = $description;
