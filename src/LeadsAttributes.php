@@ -5,15 +5,15 @@ namespace Src;
 
 class LeadsAttributes extends Attributes {
 
-	public $name = null;
-	public $companyName = null;
-	public $website = null;
-	public $numberOfEmployees = null;
-	public $notes = null;
+	public $name;
+	public $companyName;
+	public $website;
+	public $numberOfEmployees;
+	public $notes;
 
 
 	public function __construct(
-		$firstName, $lastName, $emails, $phones, $name, $companyName, $website, $numberOfEmployees, $notes
+		$firstName, $lastName, $emails, $phones, $name = '', $companyName = '', $website = '', $numberOfEmployees = '', $notes = ''
 	) {
 		parent::__construct($firstName, $lastName, $emails, $phones);
 

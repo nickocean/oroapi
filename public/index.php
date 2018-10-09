@@ -2,7 +2,7 @@
 
 require_once "../vendor/autoload.php";
 
-use Src\Attributes;
+use Src\LeadsAttributes;
 use Src\EmailsEntities;
 use Src\PhonesEntities;
 use Src\Relationships;
@@ -26,12 +26,11 @@ $url="http://oro.demo";
 
 
 ////////////
-$attributes =new Attributes(
+$attributes =new LeadsAttributes(
         'firstName_'.rand(1000, 2000),
         'lastName_'.rand(1000, 2000),
         new EmailsEntities(rand(100,200).'Email@gmail.com'),
         new PhonesEntities(rand(199999999999, 999999999999))
-        
         );
 ///////////////////
 $relationships = new Relationships();
@@ -42,6 +41,7 @@ $Lead = new LeadsEntities( $attributes, $relationships);
 
 $crm = new OroRequest($url, $userName ,$userApiKey);
 $resp=$crm->post('/index.php/api/leads', $Lead);
+debug($Lead);
 debug($resp);
 
 // GET method basic usage
