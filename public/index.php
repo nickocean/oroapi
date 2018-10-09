@@ -27,7 +27,6 @@ $url="http://oro.demo";
 
 ////////////
 $attributes =new Attributes(
-        'name_'.rand(1000, 2000),
         'firstName_'.rand(1000, 2000),
         'lastName_'.rand(1000, 2000),
         new EmailsEntities(rand(100,200).'Email@gmail.com'),
