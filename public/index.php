@@ -22,7 +22,7 @@ error_reporting(E_ALL);
 
 $userName = 'dev';
 $userApiKey = '3dc80aa0c30f554de82af4ab3924d37316a998cc';
-$url="http://188.40.225.138";
+$url="http://oro.demo";
 
 
 ////////////
@@ -42,7 +42,7 @@ $relationships->addOrganization('1');
 $Lead = new LeadsEntities('leads', $attributes, $relationships);
 
 $crm = new OroRequest($url, $userName ,$userApiKey);
-$resp=$crm->post('/index.php/api/leads/', $Lead);
+$resp=$crm->post('/index.php/api/leads', $Lead);
 debug($resp);
 
 // GET method basic usage
