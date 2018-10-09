@@ -5,11 +5,11 @@ namespace Src;
 
 class LeadsAttributes extends Attributes {
 
-	public $name = '';
-	public $companyName = '';
-	public $website = '';
-	public $numberOfEmployees = '';
-	public $notes = '';
+	public $name = null;
+	public $companyName = null;
+	public $website = null;
+	public $numberOfEmployees = null;
+	public $notes = null;
 
 
 	public function __construct(
