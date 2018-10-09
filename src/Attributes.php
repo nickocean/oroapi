@@ -18,6 +18,6 @@ class Attributes {
 		$this->phones       = [ $phones ];
 		$this->firstName    = $firstName;
 		$this->lastName     = $lastName;
-		$this->primaryEmail = $emails->email;
+		$this->primaryEmail = $emails;
 	}
 }
