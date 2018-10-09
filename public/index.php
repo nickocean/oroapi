@@ -26,7 +26,7 @@ $url="http://oro.demo";
 
 
 ////////////
-/*$attributes =new Attributes(
+$attributes =new Attributes(
         'name_'.rand(1000, 2000),
         'firstName_'.rand(1000, 2000),
         'lastName_'.rand(1000, 2000),
@@ -42,11 +42,11 @@ $relationships->addOrganization('1');
 $Lead = new LeadsEntities('leads', $attributes, $relationships);
 
 $crm = new OroRequest($url, $userName ,$userApiKey);
-$resp=$crm->post('/api/leads', $Lead);
+$resp=$crm->post('/api/leads/', $Lead);
 debug($resp);
-debug($Lead);*/
+debug($Lead);
 
 // GET method basic usage
-$crm = new OroRequest($url, $userName, $userApiKey);
+/*$crm = new OroRequest($url, $userName, $userApiKey);
 $response = $crm->get('/api/leads/', 1);
-debug($response);
+debug($response);*/
