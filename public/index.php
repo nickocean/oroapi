@@ -56,8 +56,8 @@ debug($response);*/
 
 $attrs = new CallsAttributes('Test', rand(1000000000,200000000000));
 $relationships = new Relationships;
-$relationships->addOwner(1);
-$relationships->addOrganization(1);
+$relationships->addOwner('1');
+$relationships->addOrganization('1');
 $call = new NewEntities('calls', $attrs, $relationships);
 $crm = new OroRequest($url, $userName, $userApiKey);
 $resp = $crm->post('/index.php/api/calls', $call);
