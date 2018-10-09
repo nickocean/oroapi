@@ -38,7 +38,7 @@ $relationships = new Relationships();
 $relationships->addOwner('1');
 $relationships->addOrganization('1');
 
-$Lead = new LeadsEntities('leads', $attributes, $relationships);
+$Lead = new LeadsEntities( $attributes, $relationships);
 
 $crm = new OroRequest($url, $userName ,$userApiKey);
 $resp=$crm->post('/index.php/api/leads', $Lead);

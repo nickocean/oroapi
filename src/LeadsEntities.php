@@ -7,8 +7,8 @@ class LeadsEntities {
      public $relationships;   
      public $attributes;
 
-     public function __construct($type, Attributes $attributes , Relationships $relationships) {
-         $this->type = $type;
+     public function __construct( Attributes $attributes , Relationships $relationships) {
+         $this->type = 'leads';
          $this->attributes = $attributes;
          $this->relationships = $relationships;
      }
