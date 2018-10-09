@@ -13,7 +13,6 @@ class OroRequest extends Request{
        $resp=$this->curlPost($path, 'POST', \GuzzleHttp\json_encode(['data'=>$data]));
        return $resp;
     }
-    
 
     public function put($path, $data){
         
