@@ -7,7 +7,7 @@ use Src\EmailsEntities;
 use Src\PhonesEntities;
 use Src\Relationships;
 use Src\OroRequest;
-use Src\LeadsEntities;
+use Src\NewEntities;
 
 function debug($data) {
 	echo "<pre>";
@@ -26,7 +26,7 @@ $url="http://oro.demo";
 
 
 ////////////
-/*$attributes =new LeadsAttributes(
+$attributes =new LeadsAttributes(
 		'Antony'.rand(1000,2000),
         'firstName_'.rand(1000, 2000),
         'lastName_'.rand(1000, 2000),
@@ -38,14 +38,14 @@ $relationships = new Relationships();
 $relationships->addOwner('1');
 $relationships->addOrganization('1');
 
-$Lead = new LeadsEntities( $attributes, $relationships);
+$Lead = new NewEntities( 'leads', $attributes, $relationships);
 
 $crm = new OroRequest($url, $userName ,$userApiKey);
 $resp=$crm->post('/index.php/api/leads', $Lead);
 debug($Lead);
-debug($resp);*/
+debug($resp);
 
 // GET method basic usage
-$crm = new OroRequest($url, $userName, $userApiKey);
+/*$crm = new OroRequest($url, $userName, $userApiKey);
 $response = $crm->getAll('/index.php/api/leads');
-debug($response);
+debug($response);*/
