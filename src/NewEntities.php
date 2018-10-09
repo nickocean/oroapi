@@ -7,7 +7,7 @@ class NewEntities {
      public $relationships;   
      public $attributes;
 
-     public function __construct($type, Attributes $attributes , Relationships $relationships) {
+     public function __construct($type, $attributes , Relationships $relationships) {
          $this->type = $type;
          $this->attributes = $attributes;
          $this->relationships = $relationships;

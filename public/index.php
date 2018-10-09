@@ -9,6 +9,7 @@ use Src\PhonesEntities;
 use Src\Relationships;
 use Src\OroRequest;
 use Src\NewEntities;
+use Src\CallsAttributes;
 
 function debug($data) {
 	echo "<pre>";
@@ -26,8 +27,9 @@ $userApiKey = '3dc80aa0c30f554de82af4ab3924d37316a998cc';
 $url="http://oro.demo";
 
 
-////////////
-$attributes =new LeadsAttributes(
+  // POST method adding new lead
+
+/*$attributes =new LeadsAttributes(
 		'Antony Hopkins',
         'firstName_'.rand(1000, 2000),
         'lastName_'.rand(1000, 2000),
@@ -43,9 +45,20 @@ $lead = new NewEntities( 'leads', $attributes, $relationships);
 
 $crm = new OroRequest($url, $userName ,$userApiKey);
 $resp=$crm->post('/index.php/api/leads', $lead);
-debug($resp);
+debug($resp);*/
 
-// GET method basic usage
+  // GET method basic usage
 /*$crm = new OroRequest($url, $userName, $userApiKey);
 $response = $crm->getAll('/index.php/api/leads');
 debug($response);*/
+
+  // POST new calls
+
+$attrs = new CallsAttributes('Test', rand(1000000000,200000000000));
+$relationships = new Relationships;
+$relationships->addOwner(1);
+$relationships->addOrganization(1);
+$call = new NewEntities('calls', $attrs, $relationships);
+$crm = new OroRequest($url, $userName, $userApiKey);
+$resp = $crm->post('/index.php/api/calls', $call);
+debug($resp);
