@@ -14,9 +14,9 @@ class ContactsAttributes extends Attributes {
 	public $googlePlus = null;
 
 	public function __construct(
-		$firstName, $lastName, $emails, $phones, $gender, $birthday, $description, $fax, $skype, $facebook, $googlePlus
+		$name, $firstName, $lastName, $emails, $phones, $gender, $birthday, $description, $fax, $skype, $facebook, $googlePlus
 	) {
-		parent::__construct( $firstName, $lastName, $emails, $phones );
+		parent::__construct( $name, $firstName, $lastName, $emails, $phones );
 
 		$this->gender = $gender;
 		$this->birthday = $birthday;
