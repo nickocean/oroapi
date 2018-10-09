@@ -19,12 +19,13 @@ class OroRequest extends Request{
     }
     
     public function get($path, $id) {
-		$result = $this->curlGet($path, $id);
-		return $result;
+		$response = $this->curlGet($path, $id);
+		return $response;
     }
     
-    public function getAll() {
-
+    public function getAll($path) {
+		$response = $this->curlGet($path);
+		return $response;
     }
     
     

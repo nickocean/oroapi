@@ -70,6 +70,7 @@ class Request {
 			CURLOPT_RETURNTRANSFER => true,
 			CURLOPT_HEADER => false
 		);
+
 		debug($this->_url . $path . $id);
 		$ch = curl_init();
 		curl_setopt_array($ch, $options);
