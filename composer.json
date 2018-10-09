@@ -1,0 +1,20 @@
+{
+    "name": "root/lfc",
+    "description": "test",
+    "type": "project",
+    "authors": [
+        {
+            "name": "nickocean",
+            "email": "nickocean1997@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Src\\" : "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "brofist/json-api-client": "dev-master"
+    }
+}
