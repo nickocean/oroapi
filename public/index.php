@@ -39,10 +39,10 @@ $relationships = new Relationships();
 $relationships->addOwner('1');
 $relationships->addOrganization('1');
 
-$Lead = new NewEntities( 'contacts', $attributes, $relationships);
+$contact = new NewEntities( 'contacts', $attributes, $relationships);
 
 $crm = new OroRequest($url, $userName ,$userApiKey);
-$resp=$crm->post('/index.php/api/leads', $Lead);
+$resp=$crm->post('/index.php/api/contacts', $contact);
 debug($resp);
 
 // GET method basic usage
