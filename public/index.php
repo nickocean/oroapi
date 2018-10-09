@@ -30,7 +30,7 @@ $url="http://oro.demo";
 
   // POST method adding new lead
 
-/*$attributes =new LeadsAttributes(
+$attributes =new LeadsAttributes(
 		'Antony Hopkins',
         'firstName_'.rand(1000, 2000),
         'lastName_'.rand(1000, 2000),
@@ -46,7 +46,7 @@ $lead = new NewEntities( 'leads', $attributes, $relationships);
 
 $crm = new OroRequest($url, $userName ,$userApiKey);
 $resp=$crm->post('/index.php/api/leads', $lead);
-debug($resp);*/
+debug($resp);
 
   // GET method basic usage
 /*$crm = new OroRequest($url, $userName, $userApiKey);
@@ -54,12 +54,11 @@ $response = $crm->getAll('/index.php/api/leads');
 debug($response);*/
 
   // POST new calls
-
-$attrs = new CallsAttributes('Test', rand(1000000000,200000000000));
+/*$attrs = new CallsAttributes('Test', rand(1000000000,200000000000));
 $relationships = new CallsRelationships;
 $relationships->addStatus('completed');
 $relationships->addDirection('outgoing');
 $call = new NewEntities('calls', $attrs, $relationships);
 $crm = new OroRequest($url, $userName, $userApiKey);
 $resp = $crm->post('/index.php/api/calls', $call);
-debug($resp);
+debug($resp);*/

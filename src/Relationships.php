@@ -30,55 +30,49 @@ class Relationships {
         public function addOrganization($id) {
            $this->organization=['data'=>new Entities('organizations',$id)];
         }
-        /*public function addStatus($status) {
+        public function addStatus($status) {
            $this->status=['data'=>new Entities('leadstatuses',$status)];
         }
         public function addSource($id) {
            $this->source=['data'=>new Entities('leadsources',$id)];
-        }*/
+        }
 		/*public function addMethod($id) {
-			$this->owner=['data'=>new Entities('method',$id)];
+			$this->method=['data'=>new Entities('method',$id)];
 		}
 		public function addAssignedTo($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
+			$this->assignedTo=['data'=>new Entities('users',$id)];
 		}
 		public function addReportsTo($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
+			$this->reportsTo=['data'=>new Entities('users',$id)];
 		}
 		public function addAddresses($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
+			$this->addresses=['data'=>new Entities('users',$id)];
 		}
 		public function addGroups($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
+			$this->groups=['data'=>new Entities('users',$id)];
 		}
 		public function addAccounts($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
-		}
-		public function addCreatedBy($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
-		}
-		public function addUpdatedBy($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
+			$this->accounts=['data'=>new Entities('users',$id)];
 		}
 		public function addDefaultInAccounts($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
+			$this->defaultInAccounts=['data'=>new Entities('users',$id)];
 		}
 		public function addPicture($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
+			$this->picture=['data'=>new Entities('users',$id)];
 		}
 		public function addContact($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
+			$this->contact=['data'=>new Entities('users',$id)];
 		}
 		public function addOpportunities($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
+			$this->opportunities=['data'=>new Entities('users',$id)];
 		}
 		public function addCompaign($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
+			$this->compaign=['data'=>new Entities('users',$id)];
 		}
 		public function addCustomer($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
+			$this->customer=['data'=>new Entities('users',$id)];
 		}
 		public function addAccount($id) {
-			$this->owner=['data'=>new Entities('users',$id)];
+			$this->account=['data'=>new Entities('users',$id)];
 		}*/
 }
