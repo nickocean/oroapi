@@ -47,5 +47,5 @@ debug($resp);*/
 
 // GET method basic usage
 $crm = new OroRequest($url, $userName, $userApiKey);
-$response = $crm->get('index.php/api/leads/', 1);
+$response = $crm->get('/index.php/api/leads/', 1);
 debug($response);
