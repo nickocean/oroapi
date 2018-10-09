@@ -6,8 +6,8 @@ class Relationships {
 
 	public $owner;
 	public $organization;
-	public $status;
-	public $source;
+	/*public $status;
+	public $source;*/
 	/*public $method;
 	public $assignedTo;
 	public $reportsTo;
@@ -30,12 +30,12 @@ class Relationships {
         public function addOrganization($id) {
            $this->organization=['data'=>new Entities('organizations',$id)];
         }
-        public function addStatus($status) {
+        /*public function addStatus($status) {
            $this->status=['data'=>new Entities('leadstatuses',$status)];
         }
         public function addSource($id) {
            $this->source=['data'=>new Entities('leadsources',$id)];
-        }
+        }*/
 		/*public function addMethod($id) {
 			$this->owner=['data'=>new Entities('method',$id)];
 		}
