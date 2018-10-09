@@ -10,6 +10,7 @@ use Src\Relationships;
 use Src\OroRequest;
 use Src\NewEntities;
 use Src\CallsAttributes;
+use Src\CallsRelationships;
 
 function debug($data) {
 	echo "<pre>";
@@ -55,9 +56,9 @@ debug($response);*/
   // POST new calls
 
 $attrs = new CallsAttributes('Test', rand(1000000000,200000000000));
-$relationships = new Relationships;
-$relationships->addOwner('1');
-$relationships->addOrganization('1');
+$relationships = new CallsRelationships;
+$relationships->addStatus('completed');
+$relationships->addDirection('outgoing');
 $call = new NewEntities('calls', $attrs, $relationships);
 $crm = new OroRequest($url, $userName, $userApiKey);
 $resp = $crm->post('/index.php/api/calls', $call);
