@@ -5,7 +5,6 @@ namespace Src;
 
 class LeadsAttributes extends Attributes {
 
-	public $name;
 	public $companyName;
 	public $website;
 	public $numberOfEmployees;
@@ -13,14 +12,13 @@ class LeadsAttributes extends Attributes {
 
 
 	public function __construct(
-		$firstName, $lastName, $emails, $phones, $name = '', $companyName = '', $website = '', $numberOfEmployees = '', $notes = ''
+		$name, $firstName, $lastName, $emails, $phones
 	) {
-		parent::__construct($firstName, $lastName, $emails, $phones);
+		parent::__construct($name, $firstName, $lastName, $emails, $phones);
 
-		$this->name = $name;
-		$this->companyName = $companyName;
+		/*$this->companyName = $companyName;
 		$this->website = $website;
 		$this->numberOfEmployees = $numberOfEmployees;
-		$this->notes = $notes;
+		$this->notes = $notes;*/
 	}
 }

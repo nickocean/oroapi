@@ -5,6 +5,7 @@ namespace Src;
 
 class Attributes {
 
+	public $name;
 	public $firstName;
 	public $lastName;
 	public $primaryEmail;
@@ -12,8 +13,9 @@ class Attributes {
 	public $phones;
 
 	public function __construct(
-		$firstName, $lastName, $emails, $phones
+		$name, $firstName, $lastName, $emails, $phones
 	) {
+		$this->name = $name;
 		$this->emails       = [ $emails ];
 		$this->phones       = [ $phones ];
 		$this->firstName    = $firstName;
