@@ -15,6 +15,7 @@
     },
     "minimum-stability": "dev",
     "require": {
-        "brofist/json-api-client": "dev-master"
+        "brofist/json-api-client": "dev-master",
+        "guzzlehttp/guzzle": "^6.3@dev"
     }
 }
