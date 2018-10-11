@@ -25,7 +25,7 @@ class CallsRelationships {
 		];
 	}
 
-	public function addActivityTargets($contactId, $accountId) {
+	public function addActivityTargets($contactId, $accountId, $leadId) {
 		$this->activityTargets = [
 			'data' => [
 			[
@@ -35,6 +35,10 @@ class CallsRelationships {
 			[
 				'type' => 'accounts',
 				'id' => $accountId
+			],
+			[
+				'type' => 'leads',
+				'id' => $leadId
 			]
 		]];
 	}
