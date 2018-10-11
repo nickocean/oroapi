@@ -15,7 +15,7 @@ class OroRequest extends Request{
     }
 
     public function put($path, $id, $data){
-	    $resp=$this->curlPost($path, 'PUT', \GuzzleHttp\json_encode(['data'=>$data]), $id);
+	    $resp=$this->curlPost($path, 'PUT', $data, $id);
 	    return $resp;
     }
     
