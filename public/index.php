@@ -30,7 +30,7 @@ $url="http://oro.demo";
 
   // POST method adding new lead
 
-$attributes =new LeadsAttributes(
+/*$attributes =new LeadsAttributes(
 		'Antony Hopkins',
         'firstName_'.rand(1000, 2000),
         'lastName_'.rand(1000, 2000),
@@ -43,7 +43,7 @@ $relationships->addOrganization('1');
 $lead = new NewEntities( 'leads', $attributes, $relationships);
 $crm = new OroRequest($url, $userName ,$userApiKey);
 $resp=$crm->post('/index.php/api/leads', $lead);
-debug($resp);
+debug($resp);*/
 
 
 
@@ -53,15 +53,15 @@ $response = $crm->get('/index.php/api/calls/', 5);
 debug($response);*/
 
   // POST new calls
-/*$attrs = new CallsAttributes('Test', rand(1000000000,200000000000));
+$attrs = new CallsAttributes('Test', rand(1000000000,200000000000));
 $relationships = new CallsRelationships;
 $relationships->addStatus('completed');
 $relationships->addDirection('outgoing');
-$relationships->addActivityTargets('');
+$relationships->addActivityTargets('119');
 $call = new NewEntities('calls', $attrs, $relationships);
 $crm = new OroRequest($url, $userName, $userApiKey);
 $resp = $crm->post('/index.php/api/calls', $call);
-debug($resp);*/
+debug($resp);
 
 
  // PUT lead with id = 118
