@@ -1,6 +1,8 @@
 <?php
 
-namespace Src;
+namespace Src\Relationships;
+
+use Src\Entities;
 
 class Relationships {
 
