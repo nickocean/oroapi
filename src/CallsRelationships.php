@@ -9,11 +9,11 @@ class CallsRelationships {
 	public $activityTargets;
 
 	public function addStatus($id) {
-		$this->callStatus = ['data' => new Entities('callstatuses', $id)];
+		$this->callStatus = ['data' => [ 'callstatuses' => $id ]];
 	}
 
 	public function addDirection($id) {
-		$this->direction = ['data' => new Entities('calldirections', $id)];
+		$this->direction = ['data' => [ 'calldirections' => $id ]];
 	}
 
 	public function addActivityTargets($userId, $contactId, $accountId) {
