@@ -63,8 +63,7 @@ debug($resp);*/
 
  // PUT lead with id = 118
 
-$attributes =new LeadsAttributes(
-	'Antony Hopkins',
+$attributes =new ContactsAttributes(
 	'firstName_'.rand(1000, 2000),
 	'lastName_'.rand(1000, 2000),
 	new EmailsEntities(rand(100,200).'Email@gmail.com'),
@@ -73,7 +72,7 @@ $attributes =new LeadsAttributes(
 $relationships = new Relationships();
 $relationships->addOwner('1');
 $relationships->addOrganization('1');
-$lead = new NewEntities( 'leads', $attributes, $relationships);
+$contact = new NewEntities( 'contacts', $attributes, $relationships);
 $crm = new OroRequest($url, $userName ,$userApiKey);
-$resp=$crm->put('/index.php/api/leads/', 118, $lead);
+$resp=$crm->post('/index.php/api/contacts/', $contact);
 debug($resp);
