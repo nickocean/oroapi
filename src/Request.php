@@ -24,26 +24,23 @@ class Request {
         );
     }
 
-    public function curlPost($path, $verb = NULL, $data = array(), $id = null) {
+    public function curlPost($path, $data = array()) {
 
         $wsseHeader[] = "Content-Type: application/vnd.api+json";
         $wsseHeader[] = $this->getHeader();
         $options = array(
-            CURLOPT_URL => $this->_url . $path . $id,
+            CURLOPT_URL => $this->_url . $path,
             CURLOPT_HTTPHEADER => $wsseHeader,
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_HEADER => false
+            CURLOPT_HEADER => false,
+            CURLOPT_CUSTOMREQUEST => 'POST'
         );
 		print_r($options[CURLOPT_URL]);
         if (isset($data)) {
             $options += array(
-                CURLOPT_POSTFIELDS => http_build_query($data),
+                CURLOPT_POSTFIELDS => $data,
                 CURLOPT_SAFE_UPLOAD => true
             );
-        }
-
-        if (isset($verb)) {
-            $options += array(CURLOPT_CUSTOMREQUEST => $verb);
         }
 
         $ch = curl_init();
@@ -71,6 +68,37 @@ class Request {
 		);
 
 		debug($this->_url . $path . $id);
+		$ch = curl_init();
+		curl_setopt_array($ch, $options);
+		$result = curl_exec($ch);
+
+
+		if (false === $result) {
+			echo curl_error($ch);
+		}
+
+		curl_close($ch);
+		return $result;
+	}
+
+	public function curlPut($path, $id, $data) {
+		$wsseHeader[] = "Content-Type: application/vnd.api+json";
+		$wsseHeader[] = $this->getHeader();
+		$options = array(
+			CURLOPT_URL => $this->_url . $path,
+			CURLOPT_HTTPHEADER => $wsseHeader,
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_HEADER => false,
+			CURLOPT_CUSTOMREQUEST => 'PUT'
+		);
+		print_r($options[CURLOPT_URL]);
+		if (isset($data)) {
+			$options += array(
+				CURLOPT_POSTFIELDS => $data,
+				CURLOPT_SAFE_UPLOAD => true
+			);
+		}
+
 		$ch = curl_init();
 		curl_setopt_array($ch, $options);
 		$result = curl_exec($ch);

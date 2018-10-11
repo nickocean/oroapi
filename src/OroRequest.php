@@ -10,12 +10,12 @@ class OroRequest extends Request{
     }
     
     public function post($path, $data) {
-       $resp=$this->curlPost($path, 'POST', \GuzzleHttp\json_encode(['data'=>$data]));
+       $resp=$this->curlPost($path, \GuzzleHttp\json_encode(['data'=>$data]));
        return $resp;
     }
 
     public function put($path, $id, $data){
-	    $resp=$this->curlPost($path, 'PUT', \GuzzleHttp\json_encode(['data'=>$data]), $id);
+	    $resp=$this->curlPut($path, $id, \GuzzleHttp\json_encode(['data'=>$data]));
 	    return $resp;
     }
     

@@ -76,5 +76,5 @@ $contact = new NewEntities( 'contacts', $attributes, $relationships);
 
 
 $crm = new OroRequest($url, $userName ,$userApiKey);
-$resp=$crm->put('/index.php/api/contacts/', 78, $contact);
+$resp=$crm->post('/index.php/api/contacts', $contact);
 debug($resp);
