@@ -34,7 +34,7 @@ class Request {
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_HEADER => false
         );
-
+		print_r($options[CURLOPT_URL]);
         if (!empty($data)) {
             $options += array(
                 CURLOPT_POSTFIELDS => $data,
