@@ -74,5 +74,5 @@ $relationships->addOwner('1');
 $relationships->addOrganization('1');
 $contact = new NewEntities( 'contacts', $attributes, $relationships);
 $crm = new OroRequest($url, $userName ,$userApiKey);
-$resp=$crm->put('/index.php/api/contacts', 78, $contact);
+$resp=$crm->put('/index.php/api/contacts/', 78, $contact);
 debug($resp);
