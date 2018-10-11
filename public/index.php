@@ -30,23 +30,20 @@ $url="http://oro.demo";
 
   // POST method adding new lead
 
-$attributes =new LeadsAttributes(
+/*$attributes =new LeadsAttributes(
 		'Antony Hopkins',
         'firstName_'.rand(1000, 2000),
         'lastName_'.rand(1000, 2000),
         new EmailsEntities(rand(100,200).'Email@gmail.com'),
         new PhonesEntities(rand(199999999999, 999999999999))
         );
-///////////////////
 $relationships = new Relationships();
 $relationships->addOwner('1');
 $relationships->addOrganization('1');
-
 $lead = new NewEntities( 'leads', $attributes, $relationships);
-
 $crm = new OroRequest($url, $userName ,$userApiKey);
 $resp=$crm->post('/index.php/api/leads', $lead);
-debug($resp);   
+debug($resp);*/
 
   // GET method
 /*$crm = new OroRequest($url, $userName, $userApiKey);
@@ -62,3 +59,21 @@ $call = new NewEntities('calls', $attrs, $relationships);
 $crm = new OroRequest($url, $userName, $userApiKey);
 $resp = $crm->post('/index.php/api/calls', $call);
 debug($resp);*/
+
+
+ // PUT lead with id = 118
+
+$attributes =new LeadsAttributes(
+	'Antony Hopkins',
+	'firstName_'.rand(1000, 2000),
+	'lastName_'.rand(1000, 2000),
+	new EmailsEntities(rand(100,200).'Email@gmail.com'),
+	new PhonesEntities(rand(199999999999, 999999999999))
+);
+$relationships = new Relationships();
+$relationships->addOwner('1');
+$relationships->addOrganization('1');
+$lead = new NewEntities( 'leads', $attributes, $relationships);
+$crm = new OroRequest($url, $userName ,$userApiKey);
+$resp=$crm->put('/index.php/api/leads/', 118, $lead);
+debug($resp);
