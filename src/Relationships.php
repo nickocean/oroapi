@@ -4,26 +4,6 @@ namespace Src;
 
 class Relationships {
 
-	public $owner;
-	public $organization;
-	/*public $status;
-	public $source;*/
-	/*public $method;
-	public $assignedTo;
-	public $reportsTo;
-	public $addresses;
-	public $groups;
-	public $accounts;
-	public $createdBy;
-	public $updatedBy;
-	public $defaultInAccounts;
-	public $picture;
-	public $contact;
-	public $opportunities;
-	public $compaign;
-	public $customer;
-	public $account;*/
-
         public function addOwner($id) {
            $this->owner=['data'=>new Entities('users',$id)];
         }
@@ -36,7 +16,7 @@ class Relationships {
         public function addSource($id) {
            $this->source=['data'=>new Entities('leadsources',$id)];
         }
-		/*public function addMethod($id) {
+		public function addMethod($id) {
 			$this->method=['data'=>new Entities('method',$id)];
 		}
 		public function addAssignedTo($id) {
@@ -74,5 +54,5 @@ class Relationships {
 		}
 		public function addAccount($id) {
 			$this->account=['data'=>new Entities('users',$id)];
-		}*/
+		}
 }
