@@ -9,11 +9,21 @@ class CallsRelationships {
 	public $activityTargets;
 
 	public function addStatus($id) {
-		$this->callStatus = ['data' => [ 'callstatuses' => $id ]];
+		$this->callStatus = [
+			'data' => [
+				'type' => 'callstatuses',
+				'id' => $id
+			]
+		];
 	}
 
 	public function addDirection($id) {
-		$this->direction = ['data' => [ 'calldirections' => $id ]];
+		$this->direction = [
+			'data' => [
+				'type' => 'calldirections',
+				'id' => $id
+			]
+		];
 	}
 
 	public function addActivityTargets($userId, $contactId, $accountId) {
