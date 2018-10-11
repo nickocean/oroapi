@@ -16,7 +16,9 @@ class CallsRelationships {
 		$this->direction = ['data' => new Entities('calldirections', $id)];
 	}
 
-	public function addActivityTargets($id) {
-		$this->activityTargets = ['data' => new Entities('users', $id)];
+	public function addActivityTargets($userId, $contactId, $accountId) {
+		$this->activityTargets = ['data' => new Entities('users', $userId),
+								            new Entities('contacts', $contactId),
+							                new Entities('accounts', $accountId)];
 	}
 }
