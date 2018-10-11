@@ -97,10 +97,10 @@ $contact = '{
       "createdAt": "2018-10-09T13:15:36Z",
       "updatedAt": "2018-10-09T13:15:36Z",
       "primaryPhone": "362046333401",
-      "primaryEmail": "16Email@gmail.com",
+      "primaryEmail": "16333Email@gmail.com",
       "emails": [
         {
-          "email": "16Email@gmail.com"
+          "email": "16333Email@gmail.com"
         }
       ],
       "phones": [
