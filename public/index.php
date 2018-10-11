@@ -47,6 +47,7 @@ $relationships->addOrganization('1');
 $lead = new NewEntities( 'leads', $attributes, $relationships);
 $crm = new OroRequest($url, $userName ,$userApiKey);
 $resp=$crm->post('/index.php/api/leads', $lead);
+debug($lead);
 debug($resp);
 
 
