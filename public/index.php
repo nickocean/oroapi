@@ -61,6 +61,7 @@ $relationships->addActivityTargets('119', '12', '24');
 $call = new NewEntities('calls', $attrs, $relationships);
 $crm = new OroRequest($url, $userName, $userApiKey);
 $resp = $crm->post('/index.php/api/calls', $call);
+debug($call);
 debug($resp);
 
 
