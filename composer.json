@@ -10,7 +10,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "Src\\" : "src\\"
+            "Src\\" : "src\\",
+            "Src\\Relationships" : "src\\relationships",
+            "Src\\Attributes" : "src\\attributes"
         }
     },
     "minimum-stability": "dev",

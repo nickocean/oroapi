@@ -1,6 +1,6 @@
 <?php
 
-namespace Src;
+namespace Src\Attributes;
 
 
 class ContactsAttributes extends Attributes {

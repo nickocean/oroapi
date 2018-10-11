@@ -2,15 +2,18 @@
 
 require_once "../vendor/autoload.php";
 
-use Src\LeadsAttributes;
-use Src\ContactsAttributes;
 use Src\EmailsEntities;
 use Src\PhonesEntities;
-use Src\Relationships;
 use Src\OroRequest;
 use Src\NewEntities;
-use Src\CallsAttributes;
-use Src\CallsRelationships;
+use Src\Relationships\CallsRelationships;
+use Src\Relationships\ContactsRelationships;
+use Src\Relationships\LeadsRelationships;
+use Src\Attributes\Attributes;
+use Src\Attributes\LeadsAttributes;
+use Src\Attributes\ContactsAttributes;
+use Src\Attributes\CallsAttributes;
+
 
 function debug($data) {
 	echo "<pre>";
