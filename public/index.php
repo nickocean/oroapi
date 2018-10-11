@@ -42,9 +42,8 @@ $relationships->addOwner('1');
 $relationships->addOrganization('1');
 $lead = new NewEntities( 'leads', $attributes, $relationships);
 $crm = new OroRequest($url, $userName ,$userApiKey);
-/*$resp=$crm->post('/index.php/api/leads', $lead);
-debug($resp);*/
-$crm->callToLead($lead);
+$resp=$crm->post('/index.php/api/leads', $lead);
+debug($resp);
 
 
 
@@ -58,6 +57,7 @@ debug($response);*/
 $relationships = new CallsRelationships;
 $relationships->addStatus('completed');
 $relationships->addDirection('outgoing');
+$relationships->addActivityTargets('');
 $call = new NewEntities('calls', $attrs, $relationships);
 $crm = new OroRequest($url, $userName, $userApiKey);
 $resp = $crm->post('/index.php/api/calls', $call);

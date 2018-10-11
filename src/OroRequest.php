@@ -29,11 +29,11 @@ class OroRequest extends Request{
 		return $response;
     }
 
-    public function callToLead($leadData) {
+    /*public function callToLead($leadData) {
     	$resp = $this->curlPost('/index.php/api/leads', $leadData);
     	$arr = \GuzzleHttp\json_decode($resp);
     	return print_r($arr);
-    }
+    }*/
     
     
     
