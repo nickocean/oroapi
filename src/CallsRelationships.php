@@ -17,8 +17,19 @@ class CallsRelationships {
 	}
 
 	public function addActivityTargets($userId, $contactId, $accountId) {
-		$this->activityTargets = ['data' => [new Entities('users', $userId),
-								            new Entities('contacts', $contactId),
-							                new Entities('accounts', $accountId)]];
+		$this->activityTargets = [
+			'data' => [
+				'type' => 'users',
+				'id' => $userId
+			],
+			[
+				'type' => 'contacts',
+				'id' => $contactId
+			],
+			[
+				'type' => 'accounts',
+				'id' => $accountId
+			]
+		];
 	}
 }
