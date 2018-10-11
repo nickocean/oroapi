@@ -6,7 +6,6 @@ namespace Src;
 class CallsRelationships {
 	public $callStatus;
 	public $direction;
-	public $activityTargets;
 
 	public function addStatus($id) {
 		$this->callStatus = [
