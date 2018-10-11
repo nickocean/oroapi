@@ -15,7 +15,7 @@ class OroRequest extends Request{
     }
 
     public function put($path, $id, $data){
-	    $resp=$this->curlPut($path, $id, http_build_query($data));
+	    $resp=$this->curlPut($path, $id, (\GuzzleHttp\json_encode(http_build_query(['data'=>$data]))));
 	    return $resp;
     }
     
@@ -27,6 +27,12 @@ class OroRequest extends Request{
     public function getAll($path) {
 		$response = $this->curlGet($path);
 		return $response;
+    }
+
+    public function callToLead($leadData) {
+    	$resp = $this->curlPost('/index.php/api/leads', $leadData);
+    	$arr = \GuzzleHttp\json_decode($resp);
+    	return print_r($arr);
     }
     
     

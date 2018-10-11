@@ -30,7 +30,7 @@ $url="http://oro.demo";
 
   // POST method adding new lead
 
-/*$attributes =new LeadsAttributes(
+$attributes =new LeadsAttributes(
 		'Antony Hopkins',
         'firstName_'.rand(1000, 2000),
         'lastName_'.rand(1000, 2000),
@@ -42,8 +42,11 @@ $relationships->addOwner('1');
 $relationships->addOrganization('1');
 $lead = new NewEntities( 'leads', $attributes, $relationships);
 $crm = new OroRequest($url, $userName ,$userApiKey);
-$resp=$crm->post('/index.php/api/leads', $lead);
+/*$resp=$crm->post('/index.php/api/leads', $lead);
 debug($resp);*/
+$crm->callToLead($lead);
+
+
 
   // GET method
 /*$crm = new OroRequest($url, $userName, $userApiKey);
@@ -72,99 +75,9 @@ debug($resp);*/
 $relationships = new Relationships();
 $relationships->addOwner('1');
 $relationships->addOrganization('1');
-$contact = new NewEntities( 'contacts', $attributes, $relationships);*/
-
-$contact = '{
-  "data": {
-    "type": "contacts",
-    "id": "78",
-    "attributes": {
-      "namePrefix": null,
-      "firstName": "firstName_1142",
-      "middleName": null,
-      "lastName": "lastName_1243",
-      "nameSuffix": null,
-      "gender": null,
-      "birthday": null,
-      "description": null,
-      "jobTitle": null,
-      "fax": null,
-      "skype": null,
-      "twitter": null,
-      "facebook": null,
-      "googlePlus": null,
-      "linkedIn": null,
-      "createdAt": "2018-10-09T13:15:36Z",
-      "updatedAt": "2018-10-09T13:15:36Z",
-      "primaryPhone": "362046333401",
-      "primaryEmail": "163Email@gmail.com",
-      "emails": [
-        {
-          "email": "163Email@gmail.com"
-        }
-      ],
-      "phones": [
-        {
-          "phone": "362046333401"
-        }
-      ]
-    },
-    "relationships": {
-      "source": {
-        "data": null
-      },
-      "method": {
-        "data": null
-      },
-      "owner": {
-        "data": {
-          "type": "users",
-          "id": "1"
-        }
-      },
-      "assignedTo": {
-        "data": null
-      },
-      "reportsTo": {
-        "data": null
-      },
-      "addresses": {
-        "data": []
-      },
-      "groups": {
-        "data": []
-      },
-      "accounts": {
-        "data": []
-      },
-      "createdBy": {
-        "data": {
-          "type": "users",
-          "id": "55"
-        }
-      },
-      "updatedBy": {
-        "data": {
-          "type": "users",
-          "id": "55"
-        }
-      },
-      "organization": {
-        "data": {
-          "type": "organizations",
-          "id": "1"
-        }
-      },
-      "defaultInAccounts": {
-        "data": []
-      },
-      "picture": {
-        "data": null
-      }
-    }
-  }
-}';
+$contact = new NewEntities( 'contacts', $attributes, $relationships);
 
 $crm = new OroRequest($url, $userName ,$userApiKey);
 $resp=$crm->put('/index.php/api/contacts/', 80, $contact);
-debug($resp);
+debug($resp);*/
+
