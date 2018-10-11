@@ -24,13 +24,12 @@ class Request {
         );
     }
 
-    public function curlPost($path, $verb = NULL, $data = array()) {
+    public function curlPost($path, $verb = NULL, $data = array(), $id = null) {
 
         $wsseHeader[] = "Content-Type: application/vnd.api+json";
         $wsseHeader[] = $this->getHeader();
-	    print_r($this->_url . $path);
         $options = array(
-            CURLOPT_URL => $this->_url . $path,
+            CURLOPT_URL => $this->_url . $path . $id,
             CURLOPT_HTTPHEADER => $wsseHeader,
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_HEADER => false
