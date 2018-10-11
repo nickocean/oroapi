@@ -35,9 +35,9 @@ class Request {
             CURLOPT_HEADER => false
         );
 		print_r($options[CURLOPT_URL]);
-        if (!empty($data)) {
+        if (isset($data)) {
             $options += array(
-                CURLOPT_POSTFIELDS => $data,
+                CURLOPT_POSTFIELDS => http_build_query($data),
                 CURLOPT_SAFE_UPLOAD => true
             );
         }
